@@ -99,6 +99,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "78A9B85F1589E14900FEFFA8"
+            BuildableName = "OCCukes.framework"
+            BlueprintName = "OCCukes"
+            ReferencedContainer = "container:OCCukes.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
