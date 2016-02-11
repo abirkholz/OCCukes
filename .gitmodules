@@ -2,5 +2,5 @@
 	path = CFSockets
   url=git@github.com:abirkholz/CFSockets.git
 [submodule "OCExpectations"]
-  path = OCExpectations
-  url=git@github.com:abirkholz/OCExpectations.git
+	path = OCExpectations
+	url = git@github.com:abirkholz/OCExpectations.git
