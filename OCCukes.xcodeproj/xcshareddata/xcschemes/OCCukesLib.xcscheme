@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "78A9B8A01589E19500FEFFA8"
-               BuildableName = "OCCukesLibTests.octest"
+               BuildableName = "OCCukesLibTests.xctest"
                BlueprintName = "OCCukesLibTests"
                ReferencedContainer = "container:OCCukes.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
                   <BuildableReference
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "78A9B8A01589E19500FEFFA8"
-                     BuildableName = "OCCukesLibTests.octest"
+                     BuildableName = "OCCukesLibTests.xctest"
                      BlueprintName = "OCCukesLibTests"
                      ReferencedContainer = "container:OCCukes.xcodeproj">
                   </BuildableReference>
@@ -69,7 +69,7 @@
                   <BuildableReference
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "78A9B8A01589E19500FEFFA8"
-                     BuildableName = "OCCukesLibTests.octest"
+                     BuildableName = "OCCukesLibTests.xctest"
                      BlueprintName = "OCCukesLibTests"
                      ReferencedContainer = "container:OCCukes.xcodeproj">
                   </BuildableReference>
@@ -83,7 +83,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "78A9B8A01589E19500FEFFA8"
-               BuildableName = "OCCukesLibTests.octest"
+               BuildableName = "OCCukesLibTests.xctest"
                BlueprintName = "OCCukesLibTests"
                ReferencedContainer = "container:OCCukes.xcodeproj">
             </BuildableReference>

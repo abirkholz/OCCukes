@@ -234,7 +234,7 @@
 				78791DFD1590EF3200C09841 /* CFSockets.framework */,
 				78791DFF1590EF3200C09841 /* CFSocketsTests.xctest */,
 				78791E011590EF3200C09841 /* libCFSockets.a */,
-				78791E031590EF3200C09841 /* CFSocketsLibTests.octest */,
+				78791E031590EF3200C09841 /* CFSocketsLibTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -467,7 +467,7 @@
 			name = OCCukesLibTests;
 			productName = OCCukesLibTests;
 			productReference = 78A9B8A11589E19500FEFFA8 /* OCCukesLibTests.xctest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -532,10 +532,10 @@
 			remoteRef = 78791E001590EF3200C09841 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		78791E031590EF3200C09841 /* CFSocketsLibTests.octest */ = {
+		78791E031590EF3200C09841 /* CFSocketsLibTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = CFSocketsLibTests.octest;
+			path = CFSocketsLibTests.xctest;
 			remoteRef = 78791E021590EF3200C09841 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -706,7 +706,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CURRENT_PROJECT_VERSION = 198.33;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
@@ -719,7 +719,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CURRENT_PROJECT_VERSION = 198.33;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -870,6 +870,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/OCCukesLib.dst;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -904,6 +905,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/OCCukesLib.dst;
 				FRAMEWORK_SEARCH_PATHS = (
