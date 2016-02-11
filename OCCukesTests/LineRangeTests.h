@@ -22,8 +22,8 @@
 //
 //------------------------------------------------------------------------------
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface LineRangeTests : SenTestCase
+@interface LineRangeTests : XCTestCase
 
 @end

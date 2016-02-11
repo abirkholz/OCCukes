@@ -144,25 +144,39 @@ NSString *__OCCucumberRuntimeCamelize(NSString *string);
 	return [NSArray arrayWithObjects:@"success", [NSString stringWithFormat:@"\t[OCCucumber %@:@\"^%@$\" step:^(NSArray *arguments) {\n\t\t// express the regular expression above with the code you wish you had\n\t\t[OCCucumber pending:@\"TODO\"];\n\t} file:__FILE__ line:__LINE__];", [stepKeyword lowercaseString], [snippetPattern copy]], nil];
 }
 
+- (id)handleBeginScenarioWithHash:(NSDictionary *)hash
+{
+	[[self language] beginScenario];
+    for(OCCucumberStepDefinition *stepDefinition in [[self language] beforeMatches:[hash objectForKey:@"tags"]])
+    {
+        if(stepDefinition)
+        {
+            [stepDefinition invokeWithArguments:nil];
+        }
+    }
+	return [NSArray arrayWithObject:@"success"];
+}
+
+- (id)handleEndScenarioWithHash:(NSDictionary *)hash
+{
+	[[self language] endScenario];
+    for(OCCucumberStepDefinition *stepDefinition in [[self language] afterMatches:(NSArray *)[hash objectForKey:@"tags"]])
+    {
+        if(stepDefinition)
+        {
+            [stepDefinition invokeWithArguments:nil];
+        }
+    }
+	return [NSArray arrayWithObject:@"success"];
+}
+
 - (id)handleBeginScenario
 {
 	[[self language] beginScenario];
 	return [NSArray arrayWithObject:@"success"];
 }
 
-- (id)handleBeginScenarioWithHash:(NSDictionary *)hash
-{
-	[[self language] beginScenario];
-	return [NSArray arrayWithObject:@"success"];
-}
-
 - (id)handleEndScenario
-{
-	[[self language] endScenario];
-	return [NSArray arrayWithObject:@"success"];
-}
-
-- (id)handleEndScenarioWithHash:(NSDictionary *)hash
 {
 	[[self language] endScenario];
 	return [NSArray arrayWithObject:@"success"];

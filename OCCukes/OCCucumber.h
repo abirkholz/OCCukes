@@ -42,6 +42,11 @@
 @interface OCCucumber : NSObject
 
 //----------------------------------------------------------- Language Shortcuts
++ (void)before:(void (^)())block;
++ (void)after:(void (^)())block;
+
++ (void)before:(NSString *)pattern step:(void (^)())block;
++ (void)after:(NSString *)pattern step:(void (^)())block;
 
 + (void)given:(NSString *)pattern step:(void (^)(NSArray *arguments))block;
 + (void)when:(NSString *)pattern step:(void (^)(NSArray *arguments))block;

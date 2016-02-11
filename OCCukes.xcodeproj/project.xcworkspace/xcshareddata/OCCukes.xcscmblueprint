@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7D6C5B51D7F737D0FEEF5571397B4CA1F8002702",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BA96F49C2862885A9A005874ED817EA979CD8EBD" : 0,
+    "7D6C5B51D7F737D0FEEF5571397B4CA1F8002702" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D6145D1B-BF4F-43C8-B9AD-6CC40685DB96",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BA96F49C2862885A9A005874ED817EA979CD8EBD" : "OCCukes\/CFSockets\/",
+    "7D6C5B51D7F737D0FEEF5571397B4CA1F8002702" : "OCCukes\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "OCCukes",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "OCCukes.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/abirkholz\/OCCukes.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7D6C5B51D7F737D0FEEF5571397B4CA1F8002702"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:kotikan\/CFSockets.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BA96F49C2862885A9A005874ED817EA979CD8EBD"
+    }
+  ]
+}

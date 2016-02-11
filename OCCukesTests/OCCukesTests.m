@@ -61,7 +61,7 @@
 		integer++;
 	}];
 	[OCCucumber step:@"single step"];
-	STAssertEquals(integer, 1, nil);
+	XCTAssertEqual(integer, 1);
 }
 
 - (void)testInvokeSingleStepWithArguments
@@ -72,7 +72,7 @@
 	}];
 	[OCCucumber step:@"single step with \"a\"" arguments:@[ @"b", @"c" ]];
 	NSArray *abc = @[ @"a", @"b", @"c" ];
-	STAssertEqualObjects(strings, abc, nil);
+	XCTAssertEqualObjects(strings, abc);
 }
 
 @end

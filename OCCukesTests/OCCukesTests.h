@@ -22,8 +22,8 @@
 //
 //------------------------------------------------------------------------------
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface OCCukesTests : SenTestCase
+@interface OCCukesTests : XCTestCase
 
 @end

@@ -26,6 +26,7 @@
 #import "OCCucumberRuntime+WireProtocol.h"
 #import "OCCucumberLanguage.h"
 
+
 @interface OCCucumberRuntime()
 
 // The wire socket accepts connections on a prescribed host and port, typically
@@ -37,6 +38,10 @@
 @property(strong, NS_NONATOMIC_IOSONLY) CFSocket *wireSocket;
 @property(strong, NS_NONATOMIC_IOSONLY) NSMutableSet *wirePairs;
 @property(strong, NS_NONATOMIC_IOSONLY) NSNetService *netService;
+
+//========= CUSTOM ==============
+@property __strong NSString* brokenLine;
+//========= END CUSTOM===========
 
 @end
 
@@ -51,6 +56,7 @@
 @synthesize wireSocket = _wireSocket;
 @synthesize wirePairs = _wirePairs;
 @synthesize netService = _netService;
+
 
 - (void)setLanguage:(OCCucumberLanguage *)language
 {
@@ -83,7 +89,7 @@
 {
 	// Port number zero requests any available port. The operating system
 	// chooses a suitable and available port.
-	[self setUpWithPort:0 serviceType:@"occukes-runtime"];
+	[self setUpWithPort:54321 serviceType:@"occukes-runtime"];
 }
 
 - (void)setUpWithPort:(int)port serviceType:(NSString *)serviceType
@@ -96,8 +102,8 @@
 	[self setWireSocket:socket];
 	[self setWirePairs:[NSMutableSet set]];
 	[self setExpiresDate:[NSDate dateWithTimeIntervalSinceNow:[self connectTimeout]]];
-
-	// Publish the Cucumber runtime as a "_occukes-runtime._tcp."  network
+    
+   	// Publish the Cucumber runtime as a "_occukes-runtime._tcp."  network
 	// service type. Application protocol name must be an underscore plus 1-15
 	// characters. See http://www.dns-sd.org/ServiceTypes.html for examples.
 	[self setNetService:[[NSNetService alloc] initWithDomain:@"" type:[NSString stringWithFormat:@"_%@._tcp.", serviceType] name:@"" port:[socket port]]];
@@ -105,6 +111,7 @@
 	{
 		[[self netService] publish];
 	}
+
 }
 
 - (void)tearDown
@@ -176,30 +183,63 @@
 	// second array element specifies the parameters, a hash or array depending
 	// on the message. Demultiplex the JSON request and invoke the corresponding
 	// handler.
-	NSString *line = [streamPair receiveLineUsingEncoding:NSUTF8StringEncoding];
+	
+    
+    //NSString *line = [streamPair receiveLineUsingEncoding:NSUTF8StringEncoding];
+    
+    //========= CUSTOM ===========
+    //Trims white space from beginning and end
+    NSString *line = [[streamPair receiveLineUsingEncoding:NSUTF8StringEncoding] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+   
 	if (line)
 	{
 		NSError *__autoreleasing error = nil;
-		id object = [NSJSONSerialization JSONObjectWithData:[line dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
-		if (object)
-		{
-			id result = [self handleWirePacketWithObject:object];
-			// Always answer with something whenever the request decodes valid
-			// JSON. Send valid JSON back because at the other end of the
-			// connection likely sits a Cucumber instance. Send a Cucumber
-			// wire-protocol failure packet.
-			if (result == nil)
-			{
-				result = [NSArray arrayWithObject:@"fail"];
-			}
-			NSData *data = [NSJSONSerialization dataWithJSONObject:result options:0 error:&error];
-			if (data)
-			{
-				[streamPair sendBytes:data];
-				[streamPair sendBytes:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
-			}
-		}
-	}
+        NSLog(@"Message is: %@", line);
+        
+        //========= CUSTOM ===========
+        // About: sometimes the line is so long in cucumber multiline arguments, that it gets chopped in half.
+        // This causes stalling in the wrapper. The solution is to append the two lines if the line doesnt end with ']'
+        if(![line hasSuffix:@"]"] && line.length > 3){
+            NSLog(@"\n INFO: wire sent a line broken in half. \n Appending this line with next line. \n Source: OCCucumberRuntime.m in OCCukes. \n Note this is a custom change. ");
+            _brokenLine = line;
+        }
+        else
+        {
+            //========= CUSTOM ===========
+            if(_brokenLine != nil){
+                line = [_brokenLine stringByAppendingString:line];
+                NSLog(@"Message is (appended broken line): %@", line);
+                _brokenLine = nil;
+            }
+            
+            id object = [NSJSONSerialization JSONObjectWithData:[line dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
+
+            if (object)
+            {
+                id result = [self handleWirePacketWithObject:object];
+                
+                // Always answer with something whenever the request decodes valid
+                // JSON. Send valid JSON back because at the other end of the
+                // connection likely sits a Cucumber instance. Send a Cucumber
+                // wire-protocol failure packet.
+                
+                if (!result || result == nil)
+                {
+                    NSLog(@"\n OCCucumberRuntime.m \n Result was nil. Sending fail status.");
+                    result = [NSArray arrayWithObject:@"fail"];
+                }
+
+                NSData *data = [NSJSONSerialization dataWithJSONObject:result options:0 error:&error];
+                if (data)
+                {
+                    [streamPair sendBytes:data];
+                    [streamPair sendBytes:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
+                }
+            }
+
+
+        }        
+    }
 }
 
 - (void)streamPair:(CFStreamPair *)streamPair handleRequestEvent:(NSStreamEvent)eventCode

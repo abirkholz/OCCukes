@@ -27,6 +27,7 @@
 @interface OCCucumberRuntime(WireProtocol)
 
 - (id)handleWirePacketWithObject:(id)object;
+
 - (id)handleWirePacketWithArray:(NSArray *)array;
 
 /**
@@ -55,6 +56,8 @@
  * Signals that Cucumber is about to execute a scenario.
  */
 - (id)handleBeginScenario;
+- (id)handleBeginScenarioWithHash:(NSDictionary *)hash;
+- (id)handleEndScenarioWithHash:(NSDictionary *)hash;
 
 /**
  * Signals that Cucumber has finished executing a scenario.

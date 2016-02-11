@@ -33,6 +33,12 @@
 
 @synthesize currentWorld = _currentWorld;
 @synthesize stepDefinitions = _stepDefinitions;
+@synthesize globalBefore = _globalBefore;
+@synthesize globalAfter = _globalAfter;
+@synthesize beforePatterns = _beforePatterns;
+@synthesize afterPatterns = _afterPatterns;
+
+
 
 // designated initialiser
 - (id)init
@@ -40,6 +46,8 @@
 	if ((self = [super init]))
 	{
 		[self setStepDefinitions:[NSMutableSet set]];
+        [self setBeforePatterns:[[NSMutableDictionary alloc] init]];
+        [self setAfterPatterns:[[NSMutableDictionary alloc] init]];
 	}
 	return self;
 }
@@ -49,10 +57,38 @@
 	[[self stepDefinitions] addObject:stepDefinition];
 }
 
+- (OCCucumberStepDefinition *)registerGlobalBefore:(void (^)())block
+{
+	OCCucumberStepDefinition *stepDefinition = [[OCCucumberStepDefinition alloc] initWithRegularExpression:nil block:block];
+	[self setGlobalBefore:stepDefinition];
+	return stepDefinition;
+}
+
+- (OCCucumberStepDefinition *)registerGlobalAfter:(void (^)())block
+{
+	OCCucumberStepDefinition *stepDefinition = [[OCCucumberStepDefinition alloc] initWithRegularExpression:nil block:block];
+	[self setGlobalAfter:stepDefinition];
+	return stepDefinition;
+}
+
 - (OCCucumberStepDefinition *)registerStep:(NSRegularExpression *)regularExpression block:(void (^)(NSArray *arguments))block
 {
 	OCCucumberStepDefinition *stepDefinition = [[OCCucumberStepDefinition alloc] initWithRegularExpression:regularExpression block:block];
 	[self registerStepDefinition:stepDefinition];
+	return stepDefinition;
+}
+
+- (OCCucumberStepDefinition *)registerBeforePattern:(NSString *)pattern block:(void (^)(NSArray *arguments))block
+{
+	OCCucumberStepDefinition *stepDefinition = [[OCCucumberStepDefinition alloc] initWithPattern:pattern block:block];
+	[[self beforePatterns] setObject:stepDefinition forKey:pattern];
+	return stepDefinition;
+}
+
+- (OCCucumberStepDefinition *)registerAfterPattern:(NSString *)pattern block:(void (^)(NSArray *arguments))block
+{
+	OCCucumberStepDefinition *stepDefinition = [[OCCucumberStepDefinition alloc] initWithPattern:pattern block:block];
+	[[self afterPatterns] setObject:stepDefinition forKey:pattern];
 	return stepDefinition;
 }
 
@@ -62,6 +98,36 @@
 	[self registerStepDefinition:stepDefinition];
 	return stepDefinition;
 }
+
+- (NSArray *)beforeMatches:(NSArray *)tagsToMatch
+{
+    NSMutableArray *matches = [[NSMutableArray alloc] init];
+    for(NSString *key in tagsToMatch)
+    {
+        if([[self beforePatterns] objectForKey:key])
+        {
+            [matches addObject:[[self beforePatterns] objectForKey:key]];
+        }
+    }
+    
+    [[self currentWorld] setValue:tagsToMatch forKey:@"tags"];
+    
+	return matches;
+}
+
+- (NSArray *)afterMatches:(NSArray *)tagsToMatch
+{
+    NSMutableArray *matches = [[NSMutableArray alloc] init];
+    for(NSString *key in tagsToMatch)
+    {
+        if([[self afterPatterns] objectForKey:key])
+        {
+            [matches addObject:[[self afterPatterns] objectForKey:key]];
+        }
+    }
+	return matches;
+}
+
 
 - (NSArray *)stepMatches:(NSString *)nameToMatch
 {
@@ -80,10 +146,19 @@
 - (void)beginScenario
 {
 	[self setCurrentWorld:[[OCCucumberWorld alloc] init]];
+    
+    if([self globalBefore])
+    {
+        [[self globalBefore] invokeWithArguments:nil];
+    }
 }
 
 - (void)endScenario
 {
+    if([self globalAfter])
+    {
+        [[self globalAfter] invokeWithArguments:nil];
+    }
 	[self setCurrentWorld:nil];
 }
 

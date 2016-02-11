@@ -29,16 +29,16 @@
 - (void)testLineRangeForRange
 {
 	// empty string --> no line
-	STAssertEqualObjects(NSStringFromRange([@"" lineRangeForRange:NSMakeRange(0, 0)]), @"{0, 0}", nil);
+	XCTAssertEqualObjects(NSStringFromRange([@"" lineRangeForRange:NSMakeRange(0, 0)]), @"{0, 0}");
 
 	// two lines --> first line only
-	STAssertEqualObjects(NSStringFromRange([@"\n\n" lineRangeForRange:NSMakeRange(0, 0)]), @"{0, 1}", nil);
+	XCTAssertEqualObjects(NSStringFromRange([@"\n\n" lineRangeForRange:NSMakeRange(0, 0)]), @"{0, 1}");
 
 	// carriage return, line feed --> one line terminator
-	STAssertEqualObjects(NSStringFromRange([@"123\r\n456\n" lineRangeForRange:NSMakeRange(0, 0)]), @"{0, 5}", nil);
+	XCTAssertEqualObjects(NSStringFromRange([@"123\r\n456\n" lineRangeForRange:NSMakeRange(0, 0)]), @"{0, 5}");
 
 	// carriage return --> one line terminator
-	STAssertEqualObjects(NSStringFromRange([@"123\r456\n" lineRangeForRange:NSMakeRange(0, 0)]), @"{0, 4}", nil);
+	XCTAssertEqualObjects(NSStringFromRange([@"123\r456\n" lineRangeForRange:NSMakeRange(0, 0)]), @"{0, 4}");
 }
 
 @end

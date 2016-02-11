@@ -29,10 +29,19 @@
 
 @interface OCCucumberLanguage : NSObject
 
+@property(strong, NS_NONATOMIC_IOSONLY) OCCucumberStepDefinition *globalBefore;
+@property(strong, NS_NONATOMIC_IOSONLY) OCCucumberStepDefinition *globalAfter;
 @property(strong, NS_NONATOMIC_IOSONLY) OCCucumberWorld *currentWorld;
 @property(strong, NS_NONATOMIC_IOSONLY) NSMutableSet *stepDefinitions;
+@property(strong, NS_NONATOMIC_IOSONLY) NSMutableDictionary *beforePatterns;
+@property(strong, NS_NONATOMIC_IOSONLY) NSMutableDictionary *afterPatterns;
 
 - (void)registerStepDefinition:(OCCucumberStepDefinition *)stepDefinition;
+- (OCCucumberStepDefinition *)registerGlobalBefore:(void (^)())block;
+- (OCCucumberStepDefinition *)registerGlobalAfter:(void (^)())block;
+- (OCCucumberStepDefinition *)registerBeforePattern:(NSString *)pattern block:(void (^)(NSArray *arguments))block;
+- (OCCucumberStepDefinition *)registerAfterPattern:(NSString *)pattern block:(void (^)(NSArray *arguments))block;
+
 - (OCCucumberStepDefinition *)registerStep:(NSRegularExpression *)regularExpression block:(void (^)(NSArray *arguments))block;
 - (OCCucumberStepDefinition *)registerStepPattern:(NSString *)pattern block:(void (^)(NSArray *arguments))block;
 
@@ -44,6 +53,8 @@
  * invocation and the argument values derived from the match.
  */
 - (NSArray *)stepMatches:(NSString *)nameToMatch;
+- (NSArray *)beforeMatches:(NSArray *)tagsToMatch;
+- (NSArray *)afterMatches:(NSArray *)tagsToMatch;
 
 - (void)beginScenario;
 - (void)endScenario;

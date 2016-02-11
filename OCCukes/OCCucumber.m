@@ -30,6 +30,28 @@
 
 @implementation OCCucumber
 
++ (void)before:(void (^)())block
+{
+	[[[OCCucumberRuntime sharedRuntime] language] registerGlobalBefore:block];
+}
+
++ (void)after:(void (^)())block
+{
+	[[[OCCucumberRuntime sharedRuntime] language] registerGlobalAfter:block];
+}
+
+
++ (void)before:(NSString *)pattern step:(void (^)())block
+{
+	[[[OCCucumberRuntime sharedRuntime] language] registerBeforePattern:pattern block:block];
+}
+
++ (void)after:(NSString *)pattern step:(void (^)())block
+{
+	[[[OCCucumberRuntime sharedRuntime] language] registerAfterPattern:pattern block:block];
+}
+
+
 + (void)given:(NSString *)pattern step:(void (^)(NSArray *arguments))block
 {
 	[[[OCCucumberRuntime sharedRuntime] language] registerStepPattern:pattern block:block];

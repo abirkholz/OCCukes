@@ -22,8 +22,8 @@
 //
 //------------------------------------------------------------------------------
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface CucumberTests : SenTestCase
+@interface CucumberTests : XCTestCase
 
 @end

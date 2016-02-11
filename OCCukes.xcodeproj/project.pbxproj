@@ -45,13 +45,11 @@
 		78A6FCC715CD04EB00711A87 /* OCCucumberSenTestProbe.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6FCC315CD04EB00711A87 /* OCCucumberSenTestProbe.m */; };
 		78A9B8641589E14900FEFFA8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A9B8631589E14900FEFFA8 /* Cocoa.framework */; };
 		78A9B86E1589E14900FEFFA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78A9B86C1589E14900FEFFA8 /* InfoPlist.strings */; };
-		78A9B87A1589E14900FEFFA8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A9B8791589E14900FEFFA8 /* SenTestingKit.framework */; };
 		78A9B87B1589E14900FEFFA8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A9B8631589E14900FEFFA8 /* Cocoa.framework */; };
 		78A9B87E1589E14900FEFFA8 /* OCCukes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A9B8601589E14900FEFFA8 /* OCCukes.framework */; };
 		78A9B8841589E14900FEFFA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78A9B8821589E14900FEFFA8 /* InfoPlist.strings */; };
 		78A9B8871589E14900FEFFA8 /* OCCukesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9B8861589E14900FEFFA8 /* OCCukesTests.m */; };
 		78A9B8951589E19400FEFFA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A9B8941589E19400FEFFA8 /* Foundation.framework */; };
-		78A9B8A21589E19500FEFFA8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A9B8791589E14900FEFFA8 /* SenTestingKit.framework */; };
 		78A9B8A41589E19500FEFFA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A9B8A31589E19500FEFFA8 /* UIKit.framework */; };
 		78A9B8A51589E19500FEFFA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A9B8941589E19400FEFFA8 /* Foundation.framework */; };
 		78A9B8A81589E19500FEFFA8 /* libOCCukes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A9B8931589E19400FEFFA8 /* libOCCukes.a */; };
@@ -165,15 +163,14 @@
 		78A9B86D1589E14900FEFFA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		78A9B86F1589E14900FEFFA8 /* OCCukes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCCukes-Prefix.pch"; sourceTree = "<group>"; };
 		78A9B8701589E14900FEFFA8 /* OCCukes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCCukes.h; sourceTree = "<group>"; };
-		78A9B8781589E14900FEFFA8 /* OCCukesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCCukesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		78A9B8791589E14900FEFFA8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		78A9B8781589E14900FEFFA8 /* OCCukesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCCukesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A9B8811589E14900FEFFA8 /* OCCukesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OCCukesTests-Info.plist"; sourceTree = "<group>"; };
 		78A9B8831589E14900FEFFA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		78A9B8851589E14900FEFFA8 /* OCCukesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCCukesTests.h; sourceTree = "<group>"; };
 		78A9B8861589E14900FEFFA8 /* OCCukesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCCukesTests.m; sourceTree = "<group>"; };
 		78A9B8931589E19400FEFFA8 /* libOCCukes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCCukes.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A9B8941589E19400FEFFA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		78A9B8A11589E19500FEFFA8 /* OCCukesLibTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCCukesLibTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78A9B8A11589E19500FEFFA8 /* OCCukesLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCCukesLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A9B8A31589E19500FEFFA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		78C514DD15CBA6BC00FD46D4 /* OCCucumberExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCucumberExceptions.h; sourceTree = "<group>"; };
 		78C514DE15CBA6BC00FD46D4 /* OCCucumberExceptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCCucumberExceptions.m; sourceTree = "<group>"; };
@@ -187,6 +184,7 @@
 		78F4DAC7159310A000122A3B /* OCCucumberStepMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCCucumberStepMatch.m; sourceTree = "<group>"; };
 		78F4DACC1593489900122A3B /* OCCucumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCucumber.h; sourceTree = "<group>"; };
 		78F4DACD1593489900122A3B /* OCCucumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCCucumber.m; sourceTree = "<group>"; };
+		E45DE9051C6C452B00C1ED82 /* Xcode.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Xcode.app; path = ../../../../../Applications/Xcode.app; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +201,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78A9B87A1589E14900FEFFA8 /* SenTestingKit.framework in Frameworks */,
 				78A9B87B1589E14900FEFFA8 /* Cocoa.framework in Frameworks */,
 				78A9B87E1589E14900FEFFA8 /* OCCukes.framework in Frameworks */,
 			);
@@ -222,7 +219,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78A9B8A21589E19500FEFFA8 /* SenTestingKit.framework in Frameworks */,
 				78A9B8A41589E19500FEFFA8 /* UIKit.framework in Frameworks */,
 				78A9B8A51589E19500FEFFA8 /* Foundation.framework in Frameworks */,
 				78A9B8A81589E19500FEFFA8 /* libOCCukes.a in Frameworks */,
@@ -236,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				78791DFD1590EF3200C09841 /* CFSockets.framework */,
-				78791DFF1590EF3200C09841 /* CFSocketsTests.octest */,
+				78791DFF1590EF3200C09841 /* CFSocketsTests.xctest */,
 				78791E011590EF3200C09841 /* libCFSockets.a */,
 				78791E031590EF3200C09841 /* CFSocketsLibTests.octest */,
 			);
@@ -258,9 +254,9 @@
 			isa = PBXGroup;
 			children = (
 				78A9B8601589E14900FEFFA8 /* OCCukes.framework */,
-				78A9B8781589E14900FEFFA8 /* OCCukesTests.octest */,
+				78A9B8781589E14900FEFFA8 /* OCCukesTests.xctest */,
 				78A9B8931589E19400FEFFA8 /* libOCCukes.a */,
-				78A9B8A11589E19500FEFFA8 /* OCCukesLibTests.octest */,
+				78A9B8A11589E19500FEFFA8 /* OCCukesLibTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,8 +264,8 @@
 		78A9B8621589E14900FEFFA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E45DE9051C6C452B00C1ED82 /* Xcode.app */,
 				78A9B8631589E14900FEFFA8 /* Cocoa.framework */,
-				78A9B8791589E14900FEFFA8 /* SenTestingKit.framework */,
 				78A9B8941589E19400FEFFA8 /* Foundation.framework */,
 				78A9B8A31589E19500FEFFA8 /* UIKit.framework */,
 				78A9B8651589E14900FEFFA8 /* Other Frameworks */,
@@ -433,8 +429,8 @@
 			);
 			name = OCCukesTests;
 			productName = OCCukesTests;
-			productReference = 78A9B8781589E14900FEFFA8 /* OCCukesTests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productReference = 78A9B8781589E14900FEFFA8 /* OCCukesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		78A9B8921589E19400FEFFA8 /* OCCukesLib */ = {
 			isa = PBXNativeTarget;
@@ -470,7 +466,7 @@
 			);
 			name = OCCukesLibTests;
 			productName = OCCukesLibTests;
-			productReference = 78A9B8A11589E19500FEFFA8 /* OCCukesLibTests.octest */;
+			productReference = 78A9B8A11589E19500FEFFA8 /* OCCukesLibTests.xctest */;
 			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
@@ -479,9 +475,14 @@
 		78A9B8511589E0BE00FEFFA8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastTestingUpgradeCheck = 0510;
+				LastTestingUpgradeCheck = 0720;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Pioneering Software, United Kingdom";
+				TargetAttributes = {
+					78A9B8A01589E19500FEFFA8 = {
+						DevelopmentTeam = K83LBSB5DZ;
+					};
+				};
 			};
 			buildConfigurationList = 78A9B8541589E0BE00FEFFA8 /* Build configuration list for PBXProject "OCCukes" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -517,7 +518,7 @@
 			remoteRef = 78791DFC1590EF3200C09841 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		78791DFF1590EF3200C09841 /* CFSocketsTests.octest */ = {
+		78791DFF1590EF3200C09841 /* CFSocketsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = CFSocketsTests.xctest;
@@ -704,7 +705,10 @@
 		78A9B8561589E0BE00FEFFA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CURRENT_PROJECT_VERSION = 198.33;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = k;
@@ -714,7 +718,10 @@
 		78A9B8571589E0BE00FEFFA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CURRENT_PROJECT_VERSION = 198.33;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = k;
 			};
@@ -724,11 +731,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 198.33;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks";
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -759,12 +768,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 198.33;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks";
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -786,11 +797,18 @@
 		78A9B88A1589E14900FEFFA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(PROJECT_DIR)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -812,19 +830,25 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
 		78A9B88B1589E14900FEFFA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(PROJECT_DIR)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -838,7 +862,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -849,6 +872,10 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/OCCukesLib.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -879,6 +906,10 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/OCCukesLib.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCCukes/OCCukes-Prefix.pch";
@@ -901,10 +932,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(PROJECT_DIR)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -924,8 +961,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -934,10 +972,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(PROJECT_DIR)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -950,9 +994,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
