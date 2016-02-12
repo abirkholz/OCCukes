@@ -465,7 +465,6 @@
 				78A9B8731589E14900FEFFA8 /* Sources */,
 				78A9B8741589E14900FEFFA8 /* Frameworks */,
 				78A9B8751589E14900FEFFA8 /* Resources */,
-				78A9B8761589E14900FEFFA8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -502,7 +501,6 @@
 				78A9B89C1589E19500FEFFA8 /* Sources */,
 				78A9B89D1589E19500FEFFA8 /* Frameworks */,
 				78A9B89E1589E19500FEFFA8 /* Resources */,
-				78A9B89F1589E19500FEFFA8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -525,7 +523,7 @@
 				ORGANIZATIONNAME = "Pioneering Software, United Kingdom";
 				TargetAttributes = {
 					78A9B8A01589E19500FEFFA8 = {
-						DevelopmentTeam = K83LBSB5DZ;
+						DevelopmentTeam = P7N34W95K5;
 					};
 				};
 			};
@@ -544,6 +542,10 @@
 					ProductGroup = 78791DF21590EF3100C09841 /* Products */;
 					ProjectRef = 78791DF11590EF3100C09841 /* CFSockets.xcodeproj */;
 				},
+				{
+					ProductGroup = 27BD52B21C6D521D008B6318 /* Products */;
+					ProjectRef = 27BD52B11C6D521D008B6318 /* OCExpectations.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -556,8 +558,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		27BD52B91C6D5221008B6318 /* OCExpectations.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OCExpectations.framework;
+			remoteRef = 27BD52B81C6D5221008B6318 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		27BD52BB1C6D5221008B6318 /* OCExpectationsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCExpectationsTests.xctest;
+			remoteRef = 27BD52BA1C6D5221008B6318 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		27BD52BD1C6D5221008B6318 /* libOCExpectations.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOCExpectations.a;
+			remoteRef = 27BD52BC1C6D5221008B6318 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		27BD52BF1C6D5221008B6318 /* OCExpectationsLibTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCExpectationsLibTests.xctest;
+			remoteRef = 27BD52BE1C6D5221008B6318 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		78791DFD1590EF3200C09841 /* CFSockets.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -613,35 +641,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		78A9B8761589E14900FEFFA8 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		78A9B89F1589E19500FEFFA8 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		78A9B85B1589E14900FEFFA8 /* Sources */ = {
@@ -755,6 +754,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CURRENT_PROJECT_VERSION = 198.33;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -777,7 +777,7 @@
 		78A9B8881589E14900FEFFA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -805,6 +805,7 @@
 				INFOPLIST_FILE = "OCCukes/OCCukes-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "info.cukes.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
@@ -814,7 +815,7 @@
 		78A9B8891589E14900FEFFA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -835,6 +836,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "OCCukes/OCCukes-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "info.cukes.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
@@ -875,6 +877,7 @@
 				INFOPLIST_FILE = "OCCukesTests/OCCukesTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "info.cukes.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -907,6 +910,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "OCCukesTests/OCCukesTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "info.cukes.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -1009,6 +1013,7 @@
 				INFOPLIST_FILE = "OCCukesTests/OCCukesTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = "info.cukes.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -1042,6 +1047,7 @@
 				INFOPLIST_FILE = "OCCukesTests/OCCukesTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = "info.cukes.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
