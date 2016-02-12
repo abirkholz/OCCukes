@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27BD52C01C6D5230008B6318 /* OCExpectations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BD52B91C6D5221008B6318 /* OCExpectations.framework */; };
+		27BD52C11C6D523A008B6318 /* libOCExpectations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BD52BD1C6D5221008B6318 /* libOCExpectations.a */; };
 		7817A72A15C03E96008EBB70 /* OCCucumberStepArgument.h in Headers */ = {isa = PBXBuildFile; fileRef = 7817A72815C03E96008EBB70 /* OCCucumberStepArgument.h */; settings = {ATTRIBUTES = (); }; };
 		7817A72B15C03E96008EBB70 /* OCCucumberStepArgument.h in Headers */ = {isa = PBXBuildFile; fileRef = 7817A72815C03E96008EBB70 /* OCCucumberStepArgument.h */; settings = {ATTRIBUTES = (); }; };
 		7817A72C15C03E96008EBB70 /* OCCucumberStepArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 7817A72915C03E96008EBB70 /* OCCucumberStepArgument.m */; };
@@ -77,6 +79,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		27BD52B81C6D5221008B6318 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27BD52B11C6D521D008B6318 /* OCExpectations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78C5D6A915B2858B00CA3D41;
+			remoteInfo = OCExpectations;
+		};
+		27BD52BA1C6D5221008B6318 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27BD52B11C6D521D008B6318 /* OCExpectations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78C5D6C115B2858B00CA3D41;
+			remoteInfo = OCExpectationsTests;
+		};
+		27BD52BC1C6D5221008B6318 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27BD52B11C6D521D008B6318 /* OCExpectations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7807A2DD15B4542A00E69441;
+			remoteInfo = OCExpectationsLib;
+		};
+		27BD52BE1C6D5221008B6318 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27BD52B11C6D521D008B6318 /* OCExpectations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7807A2EC15B4542A00E69441;
+			remoteInfo = OCExpectationsLibTests;
+		};
 		78791DFC1590EF3200C09841 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78791DF11590EF3100C09841 /* CFSockets.xcodeproj */;
@@ -136,6 +166,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27BD52B11C6D521D008B6318 /* OCExpectations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCExpectations.xcodeproj; path = OCExpectations/OCExpectations.xcodeproj; sourceTree = "<group>"; };
 		7817A72815C03E96008EBB70 /* OCCucumberStepArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCucumberStepArgument.h; sourceTree = "<group>"; };
 		7817A72915C03E96008EBB70 /* OCCucumberStepArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCCucumberStepArgument.m; sourceTree = "<group>"; };
 		781DF0FD1592EDE0007270C8 /* OCCucumberLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCucumberLanguage.h; sourceTree = "<group>"; };
@@ -192,6 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BD52C01C6D5230008B6318 /* OCExpectations.framework in Frameworks */,
 				78CAE1551591B61000BA2E63 /* CFSockets.framework in Frameworks */,
 				78A9B8641589E14900FEFFA8 /* Cocoa.framework in Frameworks */,
 			);
@@ -210,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BD52C11C6D523A008B6318 /* libOCExpectations.a in Frameworks */,
 				78CAE1561591B61E00BA2E63 /* libCFSockets.a in Frameworks */,
 				78A9B8951589E19400FEFFA8 /* Foundation.framework in Frameworks */,
 			);
@@ -228,6 +261,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27BD52B21C6D521D008B6318 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27BD52B91C6D5221008B6318 /* OCExpectations.framework */,
+				27BD52BB1C6D5221008B6318 /* OCExpectationsTests.xctest */,
+				27BD52BD1C6D5221008B6318 /* libOCExpectations.a */,
+				27BD52BF1C6D5221008B6318 /* OCExpectationsLibTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		78791DF21590EF3100C09841 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +286,7 @@
 		78A9B84F1589E0BE00FEFFA8 = {
 			isa = PBXGroup;
 			children = (
+				27BD52B11C6D521D008B6318 /* OCExpectations.xcodeproj */,
 				78791DF11590EF3100C09841 /* CFSockets.xcodeproj */,
 				78A9B8691589E14900FEFFA8 /* OCCukes */,
 				78A9B87F1589E14900FEFFA8 /* OCCukesTests */,
@@ -476,7 +521,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0720;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Pioneering Software, United Kingdom";
 				TargetAttributes = {
 					78A9B8A01589E19500FEFFA8 = {
@@ -511,6 +556,8 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+			sourceTree = BUILT_PRODUCTS_DIR;
+		27BD52BD1C6D5221008B6318 /* libOCExpectations.a */ = {
 		78791DFD1590EF3200C09841 /* CFSockets.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
