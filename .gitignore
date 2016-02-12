@@ -2,3 +2,6 @@
 /OCCukesPages/
 /build/
 /.idea/
+/CFSockets/
+/OCExpectations/
+*.xcuserstate
