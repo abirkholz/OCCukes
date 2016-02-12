@@ -1,4 +1,4 @@
-require 'active_support/core_ext'
+require 'active_support'
 require 'cucumber/wire_support/configuration'
 
 begin
@@ -60,22 +60,22 @@ module Cucumber
       # information. The underlying Ruby socket implementation wants
       # an IP address, a string in dotted decimal.
       def discover_net_service
-        begin
-          Timeout::timeout(30) do
-            DNSSD.browse!(original_host || '_occukes-runtime._tcp.') do |browse|
-              DNSSD.resolve!(browse) do |resolve|
-                DNSSD::Service.new.getaddrinfo(resolve.target) do |addr_info|
-                  @net_service_host, @net_service_port = addr_info.address, resolve.port
-                  STDERR.puts "Cucumber wire connecting to #{resolve.name}, address #{@net_service_host}, port #{@net_service_port}"
-                  raise Timeout::Error
-                end
+          begin
+              Timeout::timeout(60) do
+                  DNSSD.browse!(original_host || '_occukes-runtime._tcp.') do |browse|
+                      next unless ENV['DEVICE_NAME'] == nil || browse.name.include?(ENV['DEVICE_NAME'])
+                      DNSSD.resolve!(browse) do |resolve|
+                          DNSSD::Service.new.getaddrinfo(resolve.target,DNSSD::Service::IPv4) do |addr_info|
+                              @net_service_host, @net_service_port = addr_info.address, resolve.port
+                              STDERR.puts "Cucumber wire connecting to #{resolve.name}, address #{@net_service_host}, port #{@net_service_port}"
+                              raise Timeout::Error
+                          end
+                      end
+                  end
               end
-            end
+              rescue Timeout::Error
           end
-        rescue Timeout::Error
-        end
       end
-
       # Wait for the wire socket to open. Try a connection once a
       # second for thirty seconds. Give Xcode thirty seconds to set up
       # the test host. This could involve launching the iOS

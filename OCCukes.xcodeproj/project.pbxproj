@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		276AA1041C6E72DD00BA8831 /* features in Resources */ = {isa = PBXBuildFile; fileRef = 276AA1031C6E72D900BA8831 /* features */; settings = {ASSET_TAGS = (); }; };
+		276AA1051C6E72DD00BA8831 /* features in Resources */ = {isa = PBXBuildFile; fileRef = 276AA1031C6E72D900BA8831 /* features */; settings = {ASSET_TAGS = (); }; };
+		276AA1061C6E77CA00BA8831 /* CucumberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C514E415CBAAF600FD46D4 /* CucumberTests.m */; settings = {ASSET_TAGS = (); }; };
+		276AA1071C6E77CB00BA8831 /* CucumberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C514E415CBAAF600FD46D4 /* CucumberTests.m */; settings = {ASSET_TAGS = (); }; };
 		27BD52C01C6D5230008B6318 /* OCExpectations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BD52B91C6D5221008B6318 /* OCExpectations.framework */; };
 		27BD52C11C6D523A008B6318 /* libOCExpectations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BD52BD1C6D5221008B6318 /* libOCExpectations.a */; };
 		7817A72A15C03E96008EBB70 /* OCCucumberStepArgument.h in Headers */ = {isa = PBXBuildFile; fileRef = 7817A72815C03E96008EBB70 /* OCCucumberStepArgument.h */; settings = {ATTRIBUTES = (); }; };
@@ -135,20 +139,6 @@
 			remoteGlobalIDString = 78D3214815905D570039E12B;
 			remoteInfo = CFSocketsLibTests;
 		};
-		78791E041590EF4C00C09841 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78791DF11590EF3100C09841 /* CFSockets.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 78D32103159056650039E12B;
-			remoteInfo = CFSockets;
-		};
-		78791E061590EF5900C09841 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78791DF11590EF3100C09841 /* CFSockets.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 78D3213915905D570039E12B;
-			remoteInfo = CFSocketsLib;
-		};
 		78A9B87C1589E14900FEFFA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78A9B8511589E0BE00FEFFA8 /* Project object */;
@@ -166,6 +156,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		276AA1031C6E72D900BA8831 /* features */ = {isa = PBXFileReference; lastKnownFileType = folder; path = features; sourceTree = "<group>"; };
 		27BD52B11C6D521D008B6318 /* OCExpectations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCExpectations.xcodeproj; path = OCExpectations/OCExpectations.xcodeproj; sourceTree = "<group>"; };
 		7817A72815C03E96008EBB70 /* OCCucumberStepArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCucumberStepArgument.h; sourceTree = "<group>"; };
 		7817A72915C03E96008EBB70 /* OCCucumberStepArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCCucumberStepArgument.m; sourceTree = "<group>"; };
@@ -286,6 +277,7 @@
 		78A9B84F1589E0BE00FEFFA8 = {
 			isa = PBXGroup;
 			children = (
+				276AA1031C6E72D900BA8831 /* features */,
 				27BD52B11C6D521D008B6318 /* OCExpectations.xcodeproj */,
 				78791DF11590EF3100C09841 /* CFSockets.xcodeproj */,
 				78A9B8691589E14900FEFFA8 /* OCCukes */,
@@ -451,7 +443,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				78791E051590EF4C00C09841 /* PBXTargetDependency */,
 			);
 			name = OCCukes;
 			productName = OCCukes;
@@ -487,7 +478,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				78791E071590EF5900C09841 /* PBXTargetDependency */,
 			);
 			name = OCCukesLib;
 			productName = OCCukesLib;
@@ -630,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78A9B8841589E14900FEFFA8 /* InfoPlist.strings in Resources */,
+				276AA1041C6E72DD00BA8831 /* features in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +628,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276AA1051C6E72DD00BA8831 /* features in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +658,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78A9B8871589E14900FEFFA8 /* OCCukesTests.m in Sources */,
+				276AA1061C6E77CA00BA8831 /* CucumberTests.m in Sources */,
 				78CAE1591591BC6300BA2E63 /* LineRangeTests.m in Sources */,
 				788758AB15C1809700E20376 /* TableSteps.m in Sources */,
 				788758AE15C1876200E20376 /* ArgumentSteps.m in Sources */,
@@ -696,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78A9B8B81589E31900FEFFA8 /* OCCukesTests.m in Sources */,
+				276AA1071C6E77CB00BA8831 /* CucumberTests.m in Sources */,
 				78CAE15A1591BC6300BA2E63 /* LineRangeTests.m in Sources */,
 				788758AC15C1809700E20376 /* TableSteps.m in Sources */,
 				788758AF15C1876200E20376 /* ArgumentSteps.m in Sources */,
@@ -706,16 +700,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		78791E051590EF4C00C09841 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CFSockets;
-			targetProxy = 78791E041590EF4C00C09841 /* PBXContainerItemProxy */;
-		};
-		78791E071590EF5900C09841 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CFSocketsLib;
-			targetProxy = 78791E061590EF5900C09841 /* PBXContainerItemProxy */;
-		};
 		78A9B87D1589E14900FEFFA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 78A9B85F1589E14900FEFFA8 /* OCCukes */;

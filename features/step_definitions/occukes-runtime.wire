@@ -4,4 +4,5 @@ host: _occukes-runtime._tcp.
 # effort. Instead, lengthen the timeouts for specific wire protocol
 # messages.
 timeout:
+  connect: 300
   step_matches: 120
