@@ -40,6 +40,6 @@
  * the old with one exception: it does not terminate the process. The method
  * instead returns and the process can continue running if necessary.
  */
-@interface OCCucumberSenTestProbe : NSObject
+@interface OCCucumberXCTestProbe : NSObject
 
 @end

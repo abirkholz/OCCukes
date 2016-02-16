@@ -22,12 +22,12 @@
 //
 //------------------------------------------------------------------------------
 
-#import "OCCucumberSenTestProbe.h"
+#import "OCCucumberXCTestProbe.h"
 #import "OCCucumberRuntime.h"
 
 #import <objc/runtime.h>
 
-@interface OCCucumberSenTestProbe()
+@interface OCCucumberXCTestProbe()
 
 + (void)exit;
 
@@ -75,6 +75,7 @@ static id RunTests(id self, SEL _cmd, ...)
 		[defaults addSuiteNamed:@"org.OCCukes"];
 		NSTimeInterval connectTimeout = [defaults doubleForKey:@"OCCucumberRuntimeConnectTimeout"];
 		NSTimeInterval disconnectTimeout = [defaults doubleForKey:@"OCCucumberRuntimeDisconnectTimeout"];
+        
 		if (connectTimeout > DBL_EPSILON)
 		{
 			[runtime setConnectTimeout:connectTimeout];
@@ -83,34 +84,32 @@ static id RunTests(id self, SEL _cmd, ...)
 		{
 			[runtime setDisconnectTimeout:disconnectTimeout];
 		}
-		[runtime setUp];
+		
+        //Setup runtime
+        [runtime setUp];
+        
 		if ([self performSelector:@selector(isLoadedFromApplication)])
 		{
 			NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-			[center addObserverForName:OCCucumberRuntimeDisconnectNotification
-								object:nil
-								 queue:nil
-							usingBlock:^(NSNotification *note) {
-								OCCucumberRuntime *runtime = [note object];
-								if ([[runtime allConnections] count] == 0)
-								{
-									[OCCucumberSenTestProbe performSelector:@selector(exit)
-																 withObject:nil
-																 afterDelay:[[runtime expiresDate] timeIntervalSinceNow]];
-								}
-							}];
-			[center addObserverForName:OCCucumberRuntimeConnectNotification
-								object:nil
-								 queue:nil
-							usingBlock:^(NSNotification *note) {
-								OCCucumberRuntime *runtime = [note object];
-								if ([[runtime allConnections] count])
-								{
-									[NSObject cancelPreviousPerformRequestsWithTarget:[OCCucumberSenTestProbe class]
-																			 selector:@selector(exit)
-																			   object:nil];
-								}
-							}];
+            
+            //Disconnect Notification
+			[center addObserverForName:OCCucumberRuntimeDisconnectNotification object:nil queue:nil usingBlock:^(NSNotification *note)
+            {
+                OCCucumberRuntime *runtime = [note object];
+                if ([[runtime allConnections] count] == 0)
+                {
+                    [OCCucumberXCTestProbe performSelector:@selector(exit) withObject:nil afterDelay:[[runtime expiresDate] timeIntervalSinceNow]];
+                }
+            }];
+            
+            //Connect Notification
+			[center addObserverForName:OCCucumberRuntimeConnectNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+                OCCucumberRuntime *runtime = [note object];
+                if ([[runtime allConnections] count])
+				{
+                    [NSObject cancelPreviousPerformRequestsWithTarget:[OCCucumberXCTestProbe class] selector:@selector(exit)  object:nil];
+                }
+            }];
 		}
 		else
 		{
@@ -121,24 +120,24 @@ static id RunTests(id self, SEL _cmd, ...)
 	return nil;
 }
 
-@implementation OCCucumberSenTestProbe
+@implementation OCCucumberXCTestProbe
 
 + (void)load
 {
-	Class senTestProbeClass = NSClassFromString(@"XCTestProbe");
-	if (senTestProbeClass)
+	Class xcTestProbeClass = NSClassFromString(@"XCTestProbe");
+	if (xcTestProbeClass)
 	{
-		Method runTestsClassMethod = class_getClassMethod(senTestProbeClass, @selector(runTests:));
+		Method runTestsClassMethod = class_getClassMethod(xcTestProbeClass, @selector(runTests:));
 		method_setImplementation(runTestsClassMethod, RunTests);
 	}
 }
 
 + (void)exit
 {
-	Class senTestProbeClass = NSClassFromString(@"XCTestProbe");
-	if (senTestProbeClass)
+	Class xcTestProbeClass = NSClassFromString(@"XCTestProbe");
+	if (xcTestProbeClass)
 	{
-		id senTestSuite = [senTestProbeClass performSelector:@selector(specifiedTestSuite)];
+		id senTestSuite = [xcTestProbeClass performSelector:@selector(specifiedTestSuite)];
 		id senTestSuiteRun = [senTestSuite performSelector:@selector(run)];
 		BOOL hasFailed = [senTestSuiteRun performSelector:@selector(hasSucceeded)] == nil;
 		exit(hasFailed);
