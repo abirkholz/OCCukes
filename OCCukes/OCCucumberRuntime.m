@@ -72,6 +72,7 @@
 
 - (NSSet *)allConnections
 {
+    
 	return [[self wirePairs] copy];
 }
 
@@ -80,10 +81,10 @@
 	if ((self = [super init]))
 	{
 		[self setConnectTimeout:180.0];
-		[self setDisconnectTimeout:1.0];
+		[self setDisconnectTimeout:25.0];
         NSLog(@"*** Initializing OCCucumberRuntime ***");
         NSLog(@" Connect timeout = 180.0 (3 mins)");
-        NSLog(@" Disconnect timeout = 1.0");
+        NSLog(@" Disconnect timeout = 25.0");
 	}
 	return self;
 }
