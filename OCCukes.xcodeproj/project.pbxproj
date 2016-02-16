@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2751A7AF1C73B67600945D5B /* WireSteps.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751A7AE1C73B67600945D5B /* WireSteps.m */; settings = {ASSET_TAGS = (); }; };
+		2751A7B01C73B67600945D5B /* WireSteps.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751A7AE1C73B67600945D5B /* WireSteps.m */; settings = {ASSET_TAGS = (); }; };
 		276AA1041C6E72DD00BA8831 /* features in Resources */ = {isa = PBXBuildFile; fileRef = 276AA1031C6E72D900BA8831 /* features */; settings = {ASSET_TAGS = (); }; };
 		276AA1051C6E72DD00BA8831 /* features in Resources */ = {isa = PBXBuildFile; fileRef = 276AA1031C6E72D900BA8831 /* features */; settings = {ASSET_TAGS = (); }; };
 		276AA1061C6E77CA00BA8831 /* CucumberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C514E415CBAAF600FD46D4 /* CucumberTests.m */; settings = {ASSET_TAGS = (); }; };
@@ -156,6 +158,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2751A7AE1C73B67600945D5B /* WireSteps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WireSteps.m; sourceTree = "<group>"; };
 		276AA1031C6E72D900BA8831 /* features */ = {isa = PBXFileReference; lastKnownFileType = folder; path = features; sourceTree = "<group>"; };
 		27BD52B11C6D521D008B6318 /* OCExpectations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCExpectations.xcodeproj; path = OCExpectations/OCExpectations.xcodeproj; sourceTree = "<group>"; };
 		7817A72815C03E96008EBB70 /* OCCucumberStepArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCucumberStepArgument.h; sourceTree = "<group>"; };
@@ -364,6 +367,7 @@
 		78A9B87F1589E14900FEFFA8 /* OCCukesTests */ = {
 			isa = PBXGroup;
 			children = (
+				2751A7AE1C73B67600945D5B /* WireSteps.m */,
 				78A9B8851589E14900FEFFA8 /* OCCukesTests.h */,
 				78A9B8861589E14900FEFFA8 /* OCCukesTests.m */,
 				78C514E315CBAAF600FD46D4 /* CucumberTests.h */,
@@ -659,6 +663,7 @@
 			files = (
 				78A9B8871589E14900FEFFA8 /* OCCukesTests.m in Sources */,
 				276AA1061C6E77CA00BA8831 /* CucumberTests.m in Sources */,
+				2751A7AF1C73B67600945D5B /* WireSteps.m in Sources */,
 				78CAE1591591BC6300BA2E63 /* LineRangeTests.m in Sources */,
 				788758AB15C1809700E20376 /* TableSteps.m in Sources */,
 				788758AE15C1876200E20376 /* ArgumentSteps.m in Sources */,
@@ -690,6 +695,7 @@
 			files = (
 				78A9B8B81589E31900FEFFA8 /* OCCukesTests.m in Sources */,
 				276AA1071C6E77CB00BA8831 /* CucumberTests.m in Sources */,
+				2751A7B01C73B67600945D5B /* WireSteps.m in Sources */,
 				78CAE15A1591BC6300BA2E63 /* LineRangeTests.m in Sources */,
 				788758AC15C1809700E20376 /* TableSteps.m in Sources */,
 				788758AF15C1876200E20376 /* ArgumentSteps.m in Sources */,
