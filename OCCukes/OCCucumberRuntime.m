@@ -80,11 +80,11 @@
 {
 	if ((self = [super init]))
 	{
-		[self setConnectTimeout:180.0];
-		[self setDisconnectTimeout:60.0];
+		[self setConnectTimeout:300.0];
+		[self setDisconnectTimeout:240.0];
         NSLog(@"*** Initializing OCCucumberRuntime ***");
-        NSLog(@"Connect timeout: 180.0 (3 mins)");
-        NSLog(@"Disconnect timeout: 60.0 (1 min)");
+        NSLog(@"Connect timeout: 300.0 (5 mins)");
+        NSLog(@"Disconnect timeout: 240.0 (4 min)");
         NSLog(@"**************************************");
 	}
 	return self;
