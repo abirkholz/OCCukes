@@ -234,17 +234,24 @@
                     result = [NSArray arrayWithObject:@"fail"];
                 }
 
-                NSData *data = [NSJSONSerialization dataWithJSONObject:result options:0 error:&error];
-                if (data)
-                {
-                    [streamPair sendBytes:data];
-                    [streamPair sendBytes:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
-                }
+                
+                NSLog(@"Sending a normal message: %@", result);
+                [self sendData:streamPair NSArray:result];
+            }
+            else {
+                NSLog(@"Read an empty line!");
             }
 
 
         }        
     }
+}
+
+- (void)sendData:(CFStreamPair *)streamPair NSArray: message{
+    NSError *__autoreleasing error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:message options:0 error:&error];
+    [streamPair sendBytes: data];
+    [streamPair sendBytes:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
 - (void)streamPair:(CFStreamPair *)streamPair handleRequestEvent:(NSStreamEvent)eventCode
